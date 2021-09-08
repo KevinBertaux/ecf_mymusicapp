@@ -1,0 +1,226 @@
+/* Appel des polices */
+
+/* roboto-regular - latin */
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''), url('../fonts/roboto-v27-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../fonts/roboto-v27-latin-regular.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* roboto-italic - latin */
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: local(''), url('../fonts/roboto-v27-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../fonts/roboto-v27-latin-italic.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* open-sans-700 - latin */
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local(''), url('../fonts/open-sans-v22-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../fonts/open-sans-v22-latin-700.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* open-sans-700italic - latin */
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local(''), url('../fonts/open-sans-v22-latin-700italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../fonts/open-sans-v22-latin-700italic.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* Set de couleurs */
+
+:root {
+  --clr-text: #000;
+  --clr-back: #3c91a64d;
+  --clr-back2: #174C594d;
+  --clr-back3: #6FD8F280;
+  --ff-text: 'Roboto', sans-serif;
+  --ff-title: 'Open Sans', sans-serif;
+}
+
+/* Sélection du texte */
+
+/* ::-moz-selection {
+	color: var(--clr-back);
+	background-color: var(--clr-text);
+}
+
+::selection {
+	color: var(--clr-back);
+	background-color: var(--clr-text);
+}
+
+.site-header ::-moz-selection, .site-footer ::-moz-selection {
+	color: var(--clr-back);
+	background-color: var(--clr-text);
+}
+
+.site-header ::selection, .site-footer ::selection {
+	color: var(--clr-back);
+	background-color: var(--clr-text);
+}
+ */
+
+/* Navigation tabulaire */
+
+*:focus {
+  outline: .5px solid var(--clr-back);
+  outline-offset: .3rem;
+}
+
+/* Typographie */
+
+body {
+  font-family: var(--ff-text);
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: var(--clr-text);
+  background-color: var(--clr-back3);
+}
+
+/* Layout */
+
+header, main, footer {
+  /*background-color: var(--clr-back3);*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 120rem;
+}
+
+.site-title {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.search-form {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.search-form > * {
+  margin-left: 2rem;
+}
+
+.info-button {
+  padding: 0;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 2rem;
+}
+
+.response-count {
+  display: flex;justify-content: center;
+}
+
+.page-button-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.display-none {
+  display: none;
+}
+
+.response-table {
+  margin-bottom: 2rem;
+}
+
+.response-head-list, .response-table-list {
+  display: grid;
+  grid-template-columns: 1fr 6fr 14fr 10fr 1fr;
+  text-align: center;
+}
+
+.response-head-list {
+  font-size: 2rem;
+  font-weight: 700;
+  background-color: var(--clr-back2);
+  border-bottom: 1px solid #777;
+}
+
+.response-item:nth-child(1n) {
+  background-color: var(--clr-back2);
+}
+
+.response-item:nth-child(2n) {
+  background-color: var(--clr-back);
+}
+
+.page-button {
+  padding: 0.2rem 0.8rem;
+  margin: 0.8rem;
+  border-radius: 0.4rem;
+}
+
+.page-button:enabled {
+  font-weight: 900;
+  border: .2rem solid;
+}
+
+.overlap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.overlap[hidden] {
+  display: none;
+}
+
+.modal {
+  background-color: rgb(230, 230, 230);
+  width: 80vw;
+  height: 80vh;
+  padding: 2rem;
+  border-radius: 1rem;
+  overflow: auto;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.modal-cover-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-cover-item {
+  padding: .8rem;
+}

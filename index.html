@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/favicon.ico">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/helpers.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>My Music App</title>
+</head>
+
+<body>
+  <header id="site-header">
+    <div class="container">
+      <h1 class="site-title">My Music App</h1>
+      <form id="search-form" class="search-form" method="get">
+        <div>
+          <label for="query">Your search:</label>
+          <input type="text" name="query-field" id="query-field" placeholder="Type your search...">
+          <select name="type-field" id="type-field">
+            <option value="artist:">Artist</option>
+            <option value="release:">Album</option>
+            <option value="recording:">Title</option>
+            <option value="">Everything</option>
+          </select>
+        </div>
+        <div>
+          <label for="limit-field">Result per page</label>
+          <select name="limit-field" id="limit-field">
+            <option value=25>25</option>
+            <option value=50>50</option>
+            <option value=75>75</option>
+            <option value=100>100</option>
+          </select>
+        </div>
+        <button type="submit" id="submit-button" disabled>Search</button>
+      </form>
+    </div>
+  </header>
+
+  <main id="site-main">
+    <section id="overlap" class="overlap" hidden>
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <div class="info">
+            <ul class="modal-info-list">
+              <li class="modal-info-item">Title:</li>
+              <li class="modal-info-item">Artist:</li>
+              <li class="modal-info-item">Album:</li>
+              <li class="modal-info-item">Genre:</li>
+              <li class="modal-info-item">Length:</li>
+              <li class="modal-info-item">Note:</li>
+            </ul>
+          </div>
+          <div class="cover">
+            <ul id="modal-cover-list" class="modal-cover-list" role="list">
+
+            </ul>
+          </div>
+          <button id="modal-close" class="modal-close">❌</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="response-section">
+      <div class="container">
+        <p id="response-count" class="response-count">Result: 0</p>
+        <ul class="response-head-list" role="list">
+          <li class="response-head-item">#️⃣</li>
+          <li class="response-head-item">Artist</li>
+          <li class="response-head-item">Title</li>
+          <li class="response-head-item">Album</li>
+          <li class="response-head-item">Info</li>
+        </ul>
+
+        <ul id="response-table" class="response-table" role="list">
+          <p id="table-head-text">Enter a search element</p>
+          <!-- <img id="loading" class="display-none" src="/img/Infinity-2s-100px.svg" alt="Infinity symbol"> -->
+        </ul>
+
+        <ul class="page-button-list" role="list">
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>
